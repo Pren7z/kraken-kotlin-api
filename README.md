@@ -1,4 +1,4 @@
-# kraken-kotlin-api
+# Kraken API Kotlin Multiplatform
 
 This is a Kotlin Multiplatform Mobile implementaion for interacting with the API (REST & Websocket) of the crypto currency exchange Kraken. It uses Ktor and Kotlinx serialization.
 It is written for an Android application and tested with Android devices only.
