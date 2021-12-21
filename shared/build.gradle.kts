@@ -6,9 +6,6 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization")
-
-    //kotlin("jvm")
-
 }
 
 
@@ -31,15 +28,13 @@ kotlin {
 
     sourceSets {
         val commonMain by getting{
-            dependencies {
-                // ...
+            dependencies {               
                 implementation("androidx.core:core-ktx:$core_version")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
-                implementation("io.ktor:ktor-client-logging:$ktorVersion")
-                //implementation("io.ktor:ktor-client-websockets:$ktorVersion")
+                implementation("io.ktor:ktor-client-logging:$ktorVersion")           
                 implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt")
                 implementation ("org.jetbrains.kotlin:kotlin-stdlib-common")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.1")
@@ -69,10 +64,8 @@ kotlin {
             }
         }
         val iosMain by getting {
-            dependencies {
-                // ...
+            dependencies {     
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
-
             }
         }
         val iosTest by getting
@@ -120,7 +113,6 @@ val packForXcode by tasks.creating(Sync::class) {
 tasks.getByName("build").dependsOn(packForXcode)
 dependencies {
     implementation("androidx.core:core-ktx:")
-   //implementation(kotlinModule("stdlib-jdk7", kotlin_version))
 }
 repositories {
     mavenCentral()
