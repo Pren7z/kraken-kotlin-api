@@ -35,11 +35,11 @@ REST API (private with authentication)
     fun getOpenOrders() =  scope.launch{
 
       val result = async {
-          krakenApiRestClient.getWebSocketToken()
+          krakenApiRestClient.getOpenOrders()
       }.await()
 
         when(result){
-            is KrakenAPIResponse.Success -> println(result.data.token)
+            is KrakenAPIResponse.Success -> println(result.data.openOrdersList)
             is KrakenAPIResponse.Failure -> println(result.throwable)
         }
     }
