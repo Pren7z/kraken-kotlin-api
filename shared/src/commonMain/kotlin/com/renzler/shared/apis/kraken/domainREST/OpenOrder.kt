@@ -7,10 +7,9 @@ import kotlinx.serialization.json.JsonArray
 
 
 interface GetOrder{
-        fun getOpenOrders(): Map<String, Order>
-        fun getOpenOrdersAsList(): List<Order>
+        val openOrders: Map<String, Order>
+        val openOrdersList: List<Order>
         fun getOpenOrderById(id : String): Order?
-
 }
 
 
@@ -23,18 +22,16 @@ data class OpenOrder (
         private val openOrder: Open
 
 ): GetOrder{
-        override fun getOpenOrders(): Map<String, Order> {
-                return openOrder.open
-        }
+        override val openOrders: Map<String, Order>
+                get()= openOrder.open
 
-        override fun getOpenOrdersAsList(): List<Order> {
-                return openOrder.open.values.toList();
-        }
+        override val openOrdersList: List<Order>
+                get() = openOrder.open.values.toList();
+
 
         override fun getOpenOrderById(id: String): Order? {
                 return openOrder.open.get(id)
         }
-
 
 }
 
@@ -51,7 +48,7 @@ data class Open(
 data class Order(
 
         @SerialName("refid")
-        val refid: String,
+        val refid: String?=null,
         @SerialName("userref")
         val userref: Int,
         @SerialName("status")
