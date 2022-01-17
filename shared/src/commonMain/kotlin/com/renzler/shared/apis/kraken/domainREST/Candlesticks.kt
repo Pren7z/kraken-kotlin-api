@@ -57,6 +57,18 @@ data class Candlesticks (
 
 }
 
+data class Candlestick (
+
+    val timestamp : String,
+    val open: String,
+    val high: String,
+    val low: String,
+    val close: String,
+    val vwap : String,
+    val volume: String,
+    val count: String,
+
+)
 
 
 
