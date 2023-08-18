@@ -25,8 +25,8 @@ REST API (public)
     
 REST API (private with authentication)
 
-    val apiKey = "fiU23o5V7QdbjfurtzrtzrtzrtzeertzeranKehKunSzrezerzwjrfje"
-    val apiSecret = "fqkCF6eT4LZ7I1X6e4sWAfterewrwetkosg0943kgßw04t2kjjjhdfw4klß0go4w28S4QsqpCAy7lhc3MtIfzA=="
+    val apiKey = ""
+    val apiSecret = ""
 
     val krakenApiRestClient = KrakenApiRestClientImpl(apiKey,apiSecret)
     val scope = CoroutineScope(Job() + Dispatchers.Main)
